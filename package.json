@@ -1,0 +1,14 @@
+{
+  "name": "red-savior-blood-bank",
+  "version": "1.0.0",
+  "description": "blood bank management",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dharmi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
