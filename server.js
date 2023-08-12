@@ -19,8 +19,8 @@ app.use(cors())
 app.use(morgan('dev'))
 
 //routes
-app.use('/',require('./routes/testRoutes'));
-app.use('/auth', require("./routes/authRoutes"))
+app.use('/api',require('./routes/testRoutes'));
+app.use('/api/auth', require("./routes/authRoutes"))
 
 //port
 const PORT = process.env.PORT || 8000;
