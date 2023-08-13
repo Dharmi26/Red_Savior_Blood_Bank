@@ -20,7 +20,8 @@ app.use(morgan('dev'))
 
 //routes
 app.use('/api',require('./routes/testRoutes'));
-app.use('/api/auth', require("./routes/authRoutes"))
+app.use('/api/auth', require("./routes/authRoutes"));
+app.use('/api/inventory', require('./routes/inventoryRoutes'));
 
 //port
 const PORT = process.env.PORT || 8000;

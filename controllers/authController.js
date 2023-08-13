@@ -21,7 +21,8 @@ const registerController = async (req,res) => {
         await user.save()
         return res.status(201).send({
             success:true,
-            message:'User Registered Successfully'
+            message:'User Registered Successfully',
+            user,
         })
     }
     catch(error){
@@ -45,7 +46,13 @@ const loginController = async (req,res) => {
                 messange:'User Not Found'
             })
         }
-
+        //check role
+        if(user.role !== req.body.role){
+            return res.status(500).send({
+                success:false,
+                message:"role doesn't match"
+            })
+        }
         //compare password
         const comparePassword = await bcrypt.compare(req.body.password, user.password)
 
