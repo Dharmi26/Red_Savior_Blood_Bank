@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import InputType from './InputType'
 import { Link } from 'react-router-dom';
+import { handleLogin,handleRegister } from '../../../services/authService';
 
 const Form = ({submitBtn, formType}) => {
     const [email, setEmail] = useState("");
@@ -18,23 +19,23 @@ const Form = ({submitBtn, formType}) => {
         <form 
         className="space-y-4 md:space-y-6" 
         action="#"
-        // onSubmit={(e) => {
-        //   if (formType === "login")
-        //     return handleLogin(e, email, password, role);
-        //   else if (formType === "register")
-        //     return handleRegister(
-        //       e,
-        //       name,
-        //       role,
-        //       email,
-        //       password,
-        //       phone,
-        //       organisationName,
-        //       address,
-        //       hospitalName,
-        //       website
-        //     );
-        // }}
+        onSubmit={(e) => {
+          if (formType === "login")
+            return handleLogin(e, email, password, role);
+          else if (formType === "register")
+            return handleRegister(
+              e,
+              name,
+              role,
+              email,
+              password,
+              phone,
+              organisation,
+              address,
+              hospital,
+              website
+            );
+        }}
         >
 
             <div className="flex">
